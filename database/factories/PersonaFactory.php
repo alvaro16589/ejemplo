@@ -20,13 +20,13 @@ class PersonaFactory extends Factory
      * @return array
      */
     public function definition()
-    {
+    {  
         return [
-            'nombre'=> $this->faker->name(),
+            'nombre'=> $this->faker->firstName('male'|'female'),
             'apellidoPaterno'=> $this->faker->firstName(),
             'apellidoMaterno'=> $this->faker->lastName(),
             'ci'=> $this->faker->randomNumber(),
-            'sexo'=> $this->faker->name()
+            'sexo'=> $this->faker->randomElement(["Masculino","Femenino"])
         ];
     }
 }

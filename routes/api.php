@@ -19,5 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('personas',[PersonaController::class,'index'])->name('personas.index');
-Route::post('personas',[PersonaController::class,'store']);
+Route::get('personas',[PersonaController::class,'index'])->name('personas.index');//listar
+Route::post('personas',[PersonaController::class,'store']);//para guardar
+Route::get('personas/{id}',[PersonaController::class,'show']);//para buscar
+Route::put('personas/{id}',[PersonaController::class,'update']);//para actualizar
+Route::delete('personas/{id}',[PersonaController::class,'destroy']);//metodo para eliminar
